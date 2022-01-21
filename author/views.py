@@ -39,7 +39,8 @@ def author_registor(request):
 def author_login(request):
     if request.method == "GET":
         return render(request, 'login.html', {
-            'msg_title': "请输入账户和密码"
+            'msg_title': "请输入账户和密码",
+            'msg_code': 0
         })
     else:
         username = request.POST.get('username')
@@ -55,7 +56,7 @@ def author_login(request):
         except:
             return render(request, 'login.html', {
                 'msg_code': -1,
-                'msg_info': "帐号或者密码出现问题，请重新登陆"
+                'msg_info': "Error, Please relogin."
             })
 
 

@@ -5,29 +5,54 @@
     <meta charset="UTF-8">
     <title>用户登陆</title>
     <link rel="stylesheet" href="{% static 'plugins/bootstrap-4.6.1-dist/css/bootstrap.css' %}">
+    <style>
+        .middle {
+            position: absolute;
+            width: 500px;
+            top: 25%;
+            left: 25%;
+            bottom: 25%;
+            right: 25%;
+            background-color: #0c5460;
+        }
+        body{
+            background-image: url({% static 'img/2.png' %});
+        }
+    </style>
 </head>
 <body>
-<h2 class="text-center">用户登陆</h2>
-<h3 class="error_msg">{{ msg_info }}</h3>
-<form action="{% url 'author:login' %}" method="post">
-    {% csrf_token %}
-    <div class="card text-center">
-        <div class="card-header">
-            <h4>{{ msg_title }}</h4>
-        </div>
-        <div class="card-body align-items-center">
-            <form action="POST">
-                <div class="form-group col-md-6">
-                    <input class="form-control" type="text" name="username" id="username" value="{{ msg_account }}">
-                </div>
-                <div class="form-group col-md-6">
-                    <input class="form-control" type="password" name="password" id="password">
-                </div>
-                <input type="submit" class="btn btn-dark" value="立即登陆">
-            </form>
-        </div>
+<div class="container border border-5 middle">
+    <h2 class="mx-auto text-center w-50" style="background-color: #c5ff48;">用户登陆</h2>
+    <p id="msg_code" style="display: none;">{{ msg_code }}</p>
+    <div class="alert alert-warning alert-dismissible mx-auto" role="alert" id="divclose">
+{#        <strong>Warning:</strong>#}
+        <p>{{ msg_info }}</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true" id="clickclose">&times;</span>
+        </button>
     </div>
 
-</form>
+    <form action="{% url 'author:login' %}" method="post" autocomplete="new-password">
+        {% csrf_token %}
+        <div class="mx-auto border border-2 w-50 align-content-center">
+            <form action="POST">
+
+                <div class="form-group w-100 mx-auto p-2">
+                    <input class="form-control" type="text" name="username" autocomplete="off" id="username"
+                           value="{{ msg_account }}">
+                </div>
+                <div class="form-group w-100 mx-auto p-2">
+                    <input class="form-control" type="password" autocomplete="off" name="password" id="password">
+                </div>
+                <div class="form-group mx-auto p-2 text-center">
+                    <input type="submit" class="btn btn-dark" value="立即登陆">
+                </div>
+
+
+            </form>
+        </div>
+    </form>
+</div>
+<script src="{% static './js/login.js' %}"></script>
 </body>
 </html>
