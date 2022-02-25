@@ -7,7 +7,7 @@ def author_registor(request):
     if request.method == "GET":
         return render(request, 'register.html', {})
     elif request.method == "POST":
-        print(request.POST)
+        print(request.POST, request.body)
         username = request.POST.get('username')
         password = request.POST.get('password')
         realname = request.POST.get('realname')
