@@ -5,47 +5,116 @@
     <meta charset="UTF-8">
     <title>Main Page</title>
     <link rel="stylesheet" href="{% static 'plugins/bootstrap-4.6.1-dist/css/bootstrap.css' %}">
+    <style>
+        body {
+            background-image: url("{% static './img/mainbg.gif' %}")
+        }
+
+        a {
+            color: #0f6674;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">My Own web</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">My Own web</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">博客首页 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">我的主页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled">我的私信</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled">发表文章</a>
+            </li>
+        </ul>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">博客首页 <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">我的主页</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled">我的私信</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled">发表文章</a>
-      </li>
-    </ul>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-  <ul class="navbar-nav mr-auto">
-      <li>
-          <a href="author/register/" class="nav-link">注册</a>
-      </li>
-      <li>
-          <a href="author/login/" class="nav-link">登陆</a>
-      </li>
-  <ul/>
-
+        <li>
+            <a href="author/register/" class="nav-link">注册</a>
+        </li>
+        <li>
+            <a href="author/login/" class="nav-link">登陆</a>
+        </li>
+        <ul/>
 </nav>
-<ins>can you help me</ins>
-<br/>
-<u>can you help me</u>
+<div class="row w-75 rounded mx-auto my-5" style="background-color: #7abaff;">
+    <div class="col mt-3">
+        <ul class="list-inline">
+            <li class="list-inline-item ml-4"><a href="#">Python Language</a></li>
+            <li class="list-inline-item mx-4"><a href="#">Java Language</a></li>
+            <li class="list-inline-item mx-4"><a href="#">HTML</a></li>
+            <li class="list-inline-item mx-4"><a href="#">CSS</a></li>
+            <li class="list-inline-item mx-4"><a href="#">JavaScript</a></li>
+            <li class="list-inline-item mx-4"><a href="#">TODO</a></li>
+            <li class="list-inline-item mx-4"><a href="#">TODO</a></li>
+            <li class="list-inline-item mx-4"><a href="#">TODO</a></li>
+            <li class="list-inline-item mx-4"><a href="#">TODO</a></li>
+            <li class="list-inline-item mx-4"><a href="#">TODO</a></li>
+            <li class="list-inline-item mx-4"><a href="#">TODO</a></li>
+            <li class="list-inline-item mx-4"><a href="#">TODO</a></li>
+            <li class="list-inline-item mx-4"><a href="#">TODO</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container" style="margin-top: 100px;">
+    <div class="row align-items-center">
+        <div class="col-3">
+            <a href="#">
+                <div class="card">
+                    <img src="{% static './img/wallpaper/1.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">This is test.</li>
+                        <li class="list-group-item">This is test.</li>
+                        <li class="list-group-item">This is test.</li>
+                        <li class="list-group-item">This is test.</li>
+                        <li class="list-group-item">This is test.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="text-center text-white fixed-bottom" style="background-color: #caced1;">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        &#169; 2020 Copyright:
+        <a class="text-white" href="https://getbootstrap.com/">Bootstrap.com</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-award"
+             viewBox="0 0 16 16">
+            <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
+            <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+        </svg>
+    </div>
+</footer>
 <script src="{% static 'plugins/jQuery/jquery-3.6.0.js' %}"></script>
 </body>
 </html>
